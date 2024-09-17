@@ -143,8 +143,8 @@ const Quiz = () => {
 
     return (
         <>
-            <div className="main-container">
                 <QuizHeading />
+            <div className="main-container">
                 {!quizCompleted ? (
                     <motion.div
                         key={currentQuestionIndex}
@@ -188,7 +188,7 @@ const Quiz = () => {
                     </div>
                 )}
             </div>
-            {!quizCompleted && <ProgressBar
+            <ProgressBar
                 progress={progress}
                 onPrev={handlePrev}
                 onNext={handleNext}
@@ -196,7 +196,6 @@ const Quiz = () => {
                 isLast={currentQuestionIndex === questions.length - 1}
                 onFinish={handleNext} // Pass handleNext as onFinish for the last question
             />
-            }
         </>
     );
 };
