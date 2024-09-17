@@ -1,5 +1,5 @@
 To Start With Project - 
-1. Npm install
+1. npm install
 2. npm start
 
 Ferature Implemented - 
