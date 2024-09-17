@@ -188,7 +188,7 @@ const Quiz = () => {
                     </div>
                 )}
             </div>
-            <ProgressBar
+            {!quizCompleted && <ProgressBar
                 progress={progress}
                 onPrev={handlePrev}
                 onNext={handleNext}
@@ -196,6 +196,7 @@ const Quiz = () => {
                 isLast={currentQuestionIndex === questions.length - 1}
                 onFinish={handleNext} // Pass handleNext as onFinish for the last question
             />
+            }
         </>
     );
 };
