@@ -130,8 +130,30 @@ const Quiz = () => {
     };
 
     if (questions.length === 0) {
-        return <div>Loading questions...</div>;
+        return (
+            <div style={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center', 
+                height: '100vh', 
+                fontSize: '1.5rem', 
+                fontWeight: 'bold',
+                flexDirection: 'column'
+            }}>
+                <div className="spinner" style={{ 
+                    border: '4px solid rgba(0, 0, 0, 0.1)', 
+                    borderRadius: '50%', 
+                    borderTop: '4px solid #3498db', 
+                    width: '40px', 
+                    height: '40px', 
+                    animation: 'spin 1s linear infinite',
+                    marginBottom: '20px'
+                }}></div>
+                Loading questions...
+            </div>
+        );
     }
+    
 
     const currentQuestion = questions[currentQuestionIndex];
     const allOptions = [
@@ -188,7 +210,8 @@ const Quiz = () => {
                     </div>
                 )}
             </div>
-            <ProgressBar
+            {!quizCompleted && (
+                <ProgressBar
                 progress={progress}
                 onPrev={handlePrev}
                 onNext={handleNext}
@@ -196,6 +219,7 @@ const Quiz = () => {
                 isLast={currentQuestionIndex === questions.length - 1}
                 onFinish={handleNext} // Pass handleNext as onFinish for the last question
             />
+            )}
         </>
     );
 };
