@@ -1,0 +1,38 @@
+.progress-container {
+    margin-bottom: 1.5rem;
+    height: 2vh;
+  }
+  
+  .progress-bar {
+    position: relative;
+    height: 0.5rem;
+    background-color: #D1D5DB;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  
+  .progress-bar-fill {
+    position: absolute;
+    height: 100%;
+    background-color: #6D28D9;
+    transition: width 0.3s ease;
+  }
+
+  .button{
+    margin-right: 2rem;
+  }
+
+  .para{
+    padding-right:2rem;
+  }
+  
+  .progress-text {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+
+  
+  
